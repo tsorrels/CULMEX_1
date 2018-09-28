@@ -16,9 +16,9 @@ def encrypt():
 def main():
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    serversocket.bind((socket.gethostname(), 54321))
+    sock.bind((socket.gethostname(), 54321))
     while True:
-        data = clientsocket.recv()
+        data = sock.recv()
         print data
         if data == 'idru5991a:execute:encrypt5':
             #encrypt()
