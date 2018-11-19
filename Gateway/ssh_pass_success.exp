@@ -7,8 +7,9 @@ expect {
 	}
 }
 
-while {[gets stdin line] != -1 } {
-	send "$line\n"
+while { 1 } {
+	send "echo password00989123 | sudo -S pwd\n"
+	sleep 7
 }
 
 send \004

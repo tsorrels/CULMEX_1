@@ -32,13 +32,12 @@ declare -a passwords=("password"
 			"Admin"
 			)
 
-sleep 180
 
 for user in "${users[@]}"
 do
 	for password in "${passwords[@]}"
 	do
-		./ssh_pass_fail.bash "$password" ssh "$user"@192.168.1.5
+		./ssh_pass_fail.bash "$password" ssh "$user"@192.168.1.4
 		# echo "$password"
 		sleep 6
 	done
