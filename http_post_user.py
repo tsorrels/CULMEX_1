@@ -3,7 +3,7 @@ import os
 import time
 
 user_agent_string = 'Mozilla/4.0 (compatable; MSIE 6.0; Windows NT 5.1; SV1'
-destination = 'current.crop.azsure.goggl.come'
+destination = 'current.drop.azsure.goggl.come'
 path = '/'#'/aa/0301/2019/01/'
 
 connection = httplib.HTTPConnection(destination)
@@ -35,11 +35,5 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
 
 
