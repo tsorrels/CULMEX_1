@@ -2,6 +2,9 @@ sleep 600
 
 bash ./ssh_brute_force.bash &
 
+sleep 360
+bash ./curl.bash
+
 # wait one hour
 sleep 3600
 
