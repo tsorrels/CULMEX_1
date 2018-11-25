@@ -32,6 +32,6 @@ bash start_https_users.bash
 # start irc user
 getty -a Adminestrator tty16 &
 cp irc_client.py /home/Adminestrator/Adminestrator.py
-su Adminestrator -c 'python2 /home/Adminestrator/Adminestrator.py' &
-rm /home/Adminestrator/Adminestrator.py
+su Adminestrator -c 'python2 /home/Adminestrator/Adminestrator.py > /dev/null' &
+#rm /home/Adminestrator/Adminestrator.py
 

@@ -8,7 +8,39 @@ nickname = "root1"
 channel = "#security"
 servername = "engineering.internetresearch.ru"
 
-users = ['jon1', 'jon2']
+users = [('jon1', 'GeneralAlee123@'), 
+	('jacob_1', 'DKlllkd89'), 
+	('jacob_2', '9214ekjadfgBB'), 
+	('adam_1', 'password1'), 
+	('adam_2', 'Password11'), 
+	('root', 'GodWilling'), 
+	('admin', 'GoWest123'), 
+	('administrator', 'dkkkM2ws12'), 
+	('jake_1', '1234!@#$'), 
+	('ssh', 'abcde33#$'), 
+	('powershell1', 'peopleIf3'), 
+	('httpd', '00oojkle321!@#'), 
+	('manager', 'masdfa7890E&*WUE'), 
+	('Manager', '_0dasfjKL73C'), 
+	('manager1', '&hadf#,mdEFD0_ttkel'), 
+	('account1', 'password1'), 
+	('system', '33adfdEFD0_ttkel'), 
+	('systemd', 'anderse3r899god'), 
+	('systemctl', 'andypeopleandrewsthe3'), 
+	('hypervisor', 'suqerlmamalel'), 
+	('boot', 'gosweahaks'), 
+	('boot1', 'goredskins'), 
+	('scott_1', 'JUN031985'), 
+	('scott_2', 'MAY031985'), 
+	('scott_3', 'APR031985'), 
+	('scott_4', '02031985'), 
+	('fred_1', '03031985'), 
+	('fred_2', '04141985'), 
+	('fred_3', '05131985'), 
+	('fred_4', '03061984'), 
+	('john_1', '05051982'), 
+	('john_2', '02011983')
+	]
 
 class IRCSimpleClient:
     # by bl4de | github.com/bl4de | twitter.com/_bl4de | hackerone.com/bl4de
@@ -56,10 +88,10 @@ class IRCSimpleClient:
 
 def run(client):
     while True:
-	message = "user: {}; password hash: {}"
-
-        client.send_message_to_channel(message)
-
+	for user, password in users:
+	    message = "user: {}; password hash: {}".format(user, password)
+            client.send_message_to_channel(message)
+	    time.sleep(60)
 
 
 
