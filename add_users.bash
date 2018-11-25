@@ -21,7 +21,4 @@ do
 	useradd "$user" --create-home
 done
 
-echo "allan_1:password" | chpasswd
-touch /home/adamjohnson/.bash_login
-echo '/usr/bin/svchost.exe' > /home/adamjohnson/.bash_login
-echo 'echo "done"' >> /home/adamjohnson/.bash_login
+

