@@ -15,7 +15,9 @@ base_addresses = ['www.google.com',
 		'portal.amazon.com',
 		'www.newyorktimes.com',
 		'www.fbi.gov',
-		'menu.netflix.com']
+		'menu.netflix.com',
+		'www.search.googl.ru'
+		]
 
 second_items = ['item',
 		'pic',
