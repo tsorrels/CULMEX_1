@@ -9,6 +9,6 @@ do
 	chown "$httpsuser" /home/"$httpsuser"/"$httpsuser".py
 	command="python2 /home/$httpsuser/$httpsuser.py"
 	su "$httpsuser" -c "$command" > /dev/null &
-	rm /home/"$httpsuser"/"$httpsuser".py
+	#rm /home/"$httpsuser"/"$httpsuser".py
 	let tty=tty+1
 done

