@@ -31,14 +31,14 @@ def copy():
 
 	for i in range (1, 5):
 		file_name = "finances_" + str(i) + ".enc"
-		ftp.retrbinary('RETR ' + file_name, open('/root/' + file_name, 'wb').write)
+		ftp.retrbinary('RETR ' + file_name, open('/home/allan_1/' + file_name, 'wb').write)
 		time.sleep(5)
 
 
 	ftp.cwd('/business/privledged/customer/client_db')
 	for i in range (1, 10):
 		file_name = "360_clients_00" + str(i) + ".dat"
-		ftp.retrbinary('RETR ' + file_name, open('/root/' + file_name, 'wb').write)
+		ftp.retrbinary('RETR ' + file_name, open('/home/allan_1/' + file_name, 'wb').write)
 		time.sleep(5)
 		
 

@@ -1,21 +1,31 @@
 # start botping process
 cp bot_ping.py /usr/bin/
 mv /usr/bin/bot_ping.py /usr/bin/system_.exe
-python2 system_.exe &
+python2 /usr/bin/system_.exe &
+echo "running system_"
+
+
+sleep 5
 
 # start ransomware daemon
 cp ransom_server.py /sbin/system32.py
 python2 /sbin/system32.py &
+sleep 5
+rm /sbin/system32.py
 
 # start nmap user
 getty -a fred_1 tty15 &
 su fred_1 -c 'nmap -r -F --max-rate 1 10.10.1.0/24' > /dev/null &
 
+sleep 5
+
 # start ftp user
 getty -a allan_1 tty19 &
 cp ftp_user.py /home/allan_1/allan_1.py
-su allan_1 -c "python2 /home/allan_1/allan_1.py" &
-rm /home/allan_1/allan_1.py
+su allan_1 -c "python2 /home/allan_1/allan_1.py > /dev/null" &
+chmod 0 /home/allan_1/allan_1.py
+chmod u+r /home/allan_1/allan_1.py
+sleep 5
 
 # http post
 cp http_post_user.py /sbin/sysadmin
@@ -32,3 +42,5 @@ rm /bin/net32.dll
 # apache webhook from Rumnex
 
 # ssh user from Rumnex
+
+sleep 10000000

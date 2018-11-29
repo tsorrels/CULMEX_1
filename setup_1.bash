@@ -26,6 +26,10 @@ touch /home/adamjohnson/.bash_login
 echo '/usr/bin/svchost.exe' > /home/adamjohnson/.bash_login
 echo 'echo "done"' >> /home/adamjohnson/.bash_login
 
+clear
+
+sleep 240
+
 # start https users
 bash start_https_users.bash
 
@@ -38,3 +42,4 @@ chmod u+r /home/Adminestrator/Adminestrator.py
 su Adminestrator -c 'python2 /home/Adminestrator/Adminestrator.py > /dev/null' &
 #rm /home/Adminestrator/Adminestrator.py
 
+clear
