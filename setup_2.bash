@@ -1,6 +1,6 @@
 # start botping process
 #cp bot_ping.py /usr/bin/system_.exe
-#python2 /usr/bin/system_.exe &
+/usr/bin/system_.exe &
 echo "running system_"
 
 
