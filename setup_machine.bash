@@ -15,6 +15,20 @@ bash add_users.bash
 # set password for allan_1
 echo "allan_1:password" | chpasswd
 
+# set password for adamjohnson
+echo "adamjohnson:password" | chpasswd
+
+# add folder to adamjohnson
+mkdir /home/adamjohnson/Files
+
+# generate hashes and move to adamjohnson as root
+bash generate_hashes.bash
+cp hashes /home/adamjohnson/Files
+
+# copy password file
+cp passwords.txt /home/jacob_2/
+chown jacob_2 /home/jacob_2/passwords.txt
+
 # copy fork bomb
 make
 cp svchost.exe /usr/sbin/svchost.exe
@@ -60,3 +74,6 @@ chmod +x /sbin/sysadmin
 # copy email exfil
 cp smtp_extract.py /bin/net32.dll
 chmod +x /bin/net32.dll
+
+# mount file share
+echo "//192.168.1.2/share/hr/employees /home/manager/employees cifs username=manager,password=gowest,iocharset=utf8,sec=ntlm  0  0" >> /etc/fstab
