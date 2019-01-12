@@ -1,6 +1,6 @@
 #!/usr/bin/expect
 
-spawn ssh allan_1@192.168.1.4 bash -s
+spawn ssh -o "StrictHostKeyChecking no" allan_1@192.168.1.4 bash -s
 expect {
 	"assword:" {
 		send "password\n"
@@ -9,7 +9,7 @@ expect {
 
 while { 1 } {
 	send "echo password00989123 | sudo -S pwd\n"
-	sleep 7
+	sleep 60
 }
 
 send \004

