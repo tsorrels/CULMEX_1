@@ -19,6 +19,14 @@ declare -a users=("allan_1"
 for user in "${users[@]}"
 do
 	useradd "$user" --create-home
+	mkdir /home/$user/Documents
+	chown $user /home/$user/Documents
+	mkdir /home/$user/Downloads
+	chown $user /home/$user/Downloads
+	mkdir /home/$user/Desktop
+	chown $user /home/$user/Desktop
+	mkdir /home/$user/Admin
+	chown $user /home/$user/Admin
 done
 
 

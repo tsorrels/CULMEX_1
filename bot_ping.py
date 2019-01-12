@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 from socket import *
 import random
 import time
@@ -26,9 +28,13 @@ def main():
     populate_ips()
     client_socket = socket(AF_INET, SOCK_DGRAM)
     for ip in ip_addresses:
-	addr = (ip, port)
-	client_socket.sendto(payload, addr)
-	time.sleep(30)
+	try:
+	    addr = (ip, port)
+	    client_socket.sendto(payload, addr)
+	    time.sleep(30)
+	except:
+	    pass
+
 
 
 if __name__ == "__main__":

